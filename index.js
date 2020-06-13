@@ -3,8 +3,7 @@ const CONFIG = {
 }
 
 function sendGridEmail(key, to, from, subject, body, type="text/plain"){
-    const isSuccess = sendEmail(key, to, from, subject, body, type);
-    return isSuccess;
+    return sendEmail(key, to, from, subject, body, type);
 }
 
 function sendEmail(key, to, from, subject, body, type) { 
@@ -37,9 +36,9 @@ function sendEmail(key, to, from, subject, body, type) {
             ]
           }),
     }).then((response) => {
-        return true;
+        return response;
     }).catch((error) =>{
-        return false;
+        return false; 
     });
 }
 
